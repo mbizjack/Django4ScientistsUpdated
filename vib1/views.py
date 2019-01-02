@@ -15,7 +15,7 @@ def index(request):
         if form.is_valid():
             form2 = form.save(commit=False)
             result = compute(form2.A, form2.b, form2.w, form2.T)
-            result = result[7:]
+            result = result[7:] # remove static from filename, original code below doesn't work
             #result = result.replace('static/', '')
     else:
         form = InputForm()
