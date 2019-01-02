@@ -11,40 +11,11 @@
 
 <body>
 	<div class="container">
-		<div class="row">
-			<div class="col-md-5">
-				<h1>Spring Damping Caclulator</h1>
-				<p>
-					<form method=post action="">{% csrf_token %}
-						<table class="table">
-							<tr>
-								<th>Variable</th>
-								<th>Input</th>
-								<th>Description (unit)</th>
-					  		{% for field in form %}
-					    	<tr>
-					    		<td>{{ field.name }}</td>
-					    		<td>{{ field }}</td>
-					    		<td>{{ field.label }}</td>
-					    		<td>{{ field.errors }}</td>
-					    		<td></td>
-					    	</tr>
-					  		{% endfor %}
-						</table>
-						<p>
-							<input type=submit value=Compute>
-						</p>
-					</form>
-				</p>
-			</div>
-			<div class="col-md-7">
-				<p>
-					{% if result != None %}
-					{% load static %}
-						<img src="{% static result %}" width=100%>
-					{% endif %}
-				</p>
-			</div>
-		</div>
+		<h1>Site Index</h1>
+		<ul>
+			<li><a href="../hw1/">Sine calculator with result on different page</a></li>
+			<li><a href="../hw2/">Sine calculator with result in-line</a></li>
+			<li><a href="../vib1/">Spring Damping Calculator with plot</a></li>
+		</ul>
 	</div>
 </body>

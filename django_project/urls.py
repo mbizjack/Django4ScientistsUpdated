@@ -19,10 +19,12 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from .views import HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hw1/',include('hw1.urls')),
     path('hw2/',include('hw2.urls')),
     path('vib1/',include('vib1.urls')),
+    path('', HomeView.as_view(), name='home'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
